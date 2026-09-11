@@ -1,0 +1,8 @@
+{
+  "name": "Vedanth Bhat - Portfolio",
+  "description": "Personal portfolio of Vedanth Bhat — structured around an interactive Swiss Army knife sketchbook exploration of products, systems, ventures, and life.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
