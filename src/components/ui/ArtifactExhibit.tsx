@@ -52,6 +52,28 @@ export const ArtifactExhibit: React.FC<ArtifactExhibitProps> = ({
         setViewMode('image');
       } else if (isMounted && artifact.imageUrl) {
         setImageSrc(artifact.imageUrl);
+        setViewMode('image');
+      } else if (isMounted) {
+        // Check if a static file exists in /images/${artifact.id}.png|jpg|jpeg
+        const candidateUrls = [
+          `/images/${artifact.id}.png`,
+          `/images/${artifact.id}.jpg`,
+          `/images/${artifact.id}.jpeg`,
+          `/images/${artifact.id}.webp`
+        ];
+        
+        for (const url of candidateUrls) {
+          try {
+            const res = await fetch(url, { method: 'HEAD' });
+            if (res.ok && isMounted) {
+              setImageSrc(url);
+              setViewMode('image');
+              break;
+            }
+          } catch {
+            // Static file not present
+          }
+        }
       }
     };
 

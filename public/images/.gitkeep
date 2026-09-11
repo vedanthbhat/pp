@@ -1,0 +1,3 @@
+# Drop your images into this folder (/public/images/)
+# File names can be anything (e.g. sqi_screenshot.png, lanky_kid.jpg, etc.)
+# Once you upload your images here, notify the agent and it will inspect the images and map them to the corresponding projects and artifacts in portfolioData.ts!
